@@ -1,0 +1,124 @@
+# 薄い圏の考察 (14)  
+薄い圏におけるコエンド・エンドとその性質
+
+まず、一般の圏におけるコエンド（coend）または余積分の定義を確認しておく。
+
+## コエンドの定義（一般の圏）
+
+関手 $S: \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$ に対する**コエンド** $\int^c S(c,c)$ とは、対象 $d \in \operatorname{Ob}(\mathcal{D})$ と、対象で添字付けされた射の族 $\omega_c: S(c,c) \to d$（余楔や余外自然変換と呼ぶ）の組であって、以下の2条件を満たすものである。
+
+- **余楔条件**：$\mathcal{C}$ の任意の射 $f: c \to c'$ に対して、可換図式 $\omega_{c'} \circ S(c,f) = \omega_c \circ S(f,c')$ が成り立つ。
+- **普遍性**：任意の対象 $d' \in \operatorname{Ob}(\mathcal{D})$ と余楔 $\omega'_c: S(c,c) \to d'$ に対して、一意な射 $h: d \to d'$ が存在し、任意の $c \in \operatorname{Ob}(\mathcal{C})$ について $\omega'_c = h \circ \omega_c$ を満たす。
+
+## 薄い圏におけるコエンド
+
+ターゲットの圏 $\mathcal{D}$ が薄い圏の場合、任意の2対象間の射は存在すれば一意であるため、可換図式の条件は「射が存在する」という事実だけで自動的に満たされる。
+
+よって、薄い圏におけるコエンドの定義は以下のように簡略化される。
+
+**定義**  
+対象 $d \in \operatorname{Ob}(\mathcal{D})$ がコエンド $\int^c S(c,c)$ であるとは、次の2条件を満たすことである。
+
+1. 任意の $c \in \operatorname{Ob}(\mathcal{C})$ に対して、射 $S(c,c) \to d$ が存在する。
+2. 任意の対象 $d' \in \operatorname{Ob}(\mathcal{D})$ について、「任意の $c \in \operatorname{Ob}(\mathcal{C})$ に対して射 $S(c,c) \to d'$ が存在する」ならば、射 $d \to d'$ が存在する。
+
+## 命題 14-1
+
+**命題 14-1**  
+$\mathcal{D}$ を薄い局所的小圏とする。関手 $S: \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$ に対して、$\operatorname{Ob}(\mathcal{D})$ の部分類 $B$ を
+$$
+B = \{ S(c,c) \mid c \in \operatorname{Ob}(\mathcal{C}) \}
+$$
+で定義する。
+
+このとき、上限 $\sup B$ が $\mathcal{D}$ に存在すれば（上限が複数あるときは任意に一つ選んで $d$ とする）、$d$ は関手 $S$ のコエンド $\int^c S(c,c)$ と対象同型になる。また $\sup B$ が存在しないときは、コエンドは定義できない。
+
+**証明**  
+　前述の「薄い圏におけるコエンドの書き換えられた定義」を満たすことを、上限の性質（上界性と最小上界性）を用いて示す。
+ステップ1：余楔条件（上界性）の確認。
+　$d = \sup B$ とする。上界性より、$B$ の任意の元から $d$ への射が存在する。
+　$B$ の元は $S(c,c)$ の形をしているため、これは任意の $c \in \mathrm{Ob}(\mathcal{C})$ に対して射 $S(c,c) \to d$ が存在することを意味する。
+これにより、薄い圏における余楔条件（書き直された定義の1）が満たされた。
+ステップ2：普遍性（最小上界性）の確認。
+　任意の対象 $d' \in \mathrm{Ob}(\mathcal{D})$ が別の余楔、すなわち「任意の $c \in \mathrm{Ob}(\mathcal{C})$ に対して射 $S(c,c) \to d'$ が存在する」とする。
+これは、$d'$ が$B$ の上界の一つであることを意味している。$d = \sup B$ の最小上界性より、射 $d \to d'$ が存在する。
+$\mathcal{D}$ は薄い圏であるため、この射は唯一存在であり、普遍性（書き直された定義の2）が満たされる。
+以上より $\sup B$ はコエンドの条件を満たす。もし別にコエンドが存在すれば普遍性により互いに双方向の射を持つため
+$$\int^c S(c,c) \cong \sup B \quad (\text{対象同型})$$
+が成り立つ。
+　また $\sup B$ が存在しないのにコエンドが存在すると仮定すると、上議論よりコエンドが $\sup B$ の条件を満たしてしまい矛盾する。ゆえに $\sup B$ が存在しないときはコエンドも定義できない。
+（証明終）
+
+## 薄い圏における積分に関する命題
+　薄い圏においても、ルベーグ積分論のときと同じような命題が成り立つことを示す。
+　以下、文章の簡略化のため「射 $a \to b$ が存在すること」を単に「$a \to b$」と書く。また
+$ \sup_ib_i:=sup\{b_i\in\mathcal{C}| i\in I\}$などの表記を用いる。
+
+**命題 14-2**（Fatouの補題相当）  
+$$
+\int^c \sup_n \inf_{k \geq n} S_k(c,c) \to \sup_n \inf_{k \geq n} \int^c S_k(c,c).
+$$
+（順序関係 $\leq$ で表せば $\int^c \liminf S_k(c,c) \leq \liminf \int^c S_k(c,c)$）
+
+**証明**
+薄い圏では $\int^c (\cdot) \cong \sup_c (\cdot)$ であるから、求める射の定義域は $\sup_c \sup_n \inf_{k\geq n} S_k(c,c)$、値域は $\sup_n \inf_{k\geq n} \sup_c S_k(c,c)$ と書き換えられる。
+
+まず、上限下限に関する基本性質（射の保存性、もしくは単調性）を示す。
+命題。任意の$a\in A,b\in B$に対して$a\to b$ならば、$supA\to supB$かつ$infA\to infB.$
+（証明）$supB$の上界性より$b\to supB.$ $a\to b$と合成して$a\to supB.$$supA$の最小上界性より$supA\to supB.$
+また同じく$infA$の下界性より$infA\to a.$ $a\to b$と合成して$infA\to b.$ $infB$の最大下界性より$infA\to infB.$(証明終)
+
+　任意の$c'\in\mathcal{C} $に対して
+$S_k(c',c') \to \sup_{c} S_k(c,c)$なので、この性質により$\inf_{k\geq n} S_k(c',c') \to \inf_{k\geq n} \sup_{c} S_k(c,c)$.
+$c'$ に関して上限をとると$sup_{c'}\inf_{k\geq n} S_k(c',c') \to \inf_{k\geq n} \sup_{c} S_k(c,c)$.
+$ n$に関して上限をとると、求める射が得られる。（命題14-2の証明終）
+
+**命題14-3および14-4を導くための基本補題。（上限の交換・結合則）**
+添字の類 $I, J$ について、$\sup_{(i,j)\in I\times J} a_{i,j} \cong \sup_{i\in I} \sup_{j\in J} a_{i,j}$ が成り立つ。
+**証明**
+上限の上界性より、任意の $i, j$ について射列 $a_{i,j} \to \sup_j a_{i,j} \to \sup_i \sup_j a_{i,j}$が存在。
+最小上界性より、$\sup_{(i,j)} a_{i,j} \to \sup_i \sup_j a_{i,j}.$
+逆に$a_{i,j} \to \sup_{(i,j)} a_{i,j}$ なので、まず $j$ について上限をとると $\sup_j a_{i,j} \to \sup_{(i,j)} a_{i,j}.$さらに $i$ について上限をとることで $\sup_i \sup_j a_{i,j} \to \sup_{(i,j)} a_{i,j}.$
+双方向に射が存在するため、両者は対象同型である。（証明終）
+
+**命題 14-3**（Lebesgueの収束定理相当）  
+各 $i \in I$ に対して関手 $F_i: \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$ が与えられたとき、
+$$
+\sup_i \int^c F_i(c,c) \cong \int^c \sup_i F_i(c,c).
+$$
+**証明**
+薄い圏では $\int^c (\cdot) \cong \sup_c (\cdot)$ であり、基本補題より上限は順序に依存せず結合できるため、両者は対象同型となる。（証明終）
+
+**命題 14-4**（Fubiniの定理相当）  
+$$
+\int^{(x,y)} F(x,y,x,y) \cong \int^x \int^y F(x,y,x,y) \cong \int^y \int^x F(x,y,x,y).
+$$
+**証明**
+コエンドを上限に書き換えると、求める射列は$\sup_{(x,y)} F(x,y,x,y) \cong \sup_x \sup_y F(x,y,x,y) \cong \sup_y \sup_x F(x,y,x,y)$ となる。これは基本補題の直接の帰結である。（証明終）
+
+## エンドの場合
+
+薄い圏における**エンド** $\int_c S(c,c)$ も同様に簡略化される。
+
+対象 $d \in \operatorname{Ob}(\mathcal{D})$ がエンドであるとは、次の2条件を満たすことである。
+
+- **下界性**：任意の $c \in \operatorname{Ob}(\mathcal{C})$ に対して、射 $d \to S(c,c)$ が存在する。
+- **最大下界性**：任意の対象 $d' \in \operatorname{Ob}(\mathcal{D})$ について、「任意の $c \in \operatorname{Ob}(\mathcal{C})$ に対して射 $d' \to S(c,c)$ が存在する」ならば、射 $d' \to d$ が存在する。
+
+**命題 14-5**  
+$\mathcal{D}$ を薄い局所的小圏とする。関手 $S: \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$ に対して、$B = \{S(c,c) \mid c \in \operatorname{Ob}(\mathcal{C})\}$ とすると、下限 $\inf B$ が存在すれば $\int_c S(c,c) \cong \inf B$ となる。$\inf B$ が存在しないときはエンドは定義できない。
+
+**命題 14-6**（Fatouの補題、エンド版）  
+$$
+\inf_n \sup_{k \geq n} \int_c S_k(c,c) \to \int_c \inf_n \sup_{k \geq n} S_k(c,c).
+$$
+
+**命題 14-7**（Lebesgueの収束定理、エンド版）  
+$$
+\inf_i \int_c F_i(c,c) \cong \int_c \inf_i F_i(c,c).
+$$
+
+**命題 14-8**（Fubiniの定理、エンド版）  
+$$
+\int_{(x,y)} F(x,y,x,y) \cong \int^x \int^y F(x,y,x,y) \cong \int^y \int^x F(x,y,x,y).
+$$
