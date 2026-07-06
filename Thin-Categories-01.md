@@ -48,7 +48,8 @@ Henceforth, any thin category will be denoted by $\mathcal{C}(A,f)$ or $C_A$ usi
 
 ## Basic Properties of Thin Category $C_A$
 
-- $C_A$ is a **locally small category**, since for any $i,j \in A$, the hom-set $\mathrm{hom}(i,j) := \{f_{ij}\}$ is either empty or a singleton.
+- $C_A$ is a **locally small category**, since for any $i,j \in A$, the hom-set $hom(i,j)$ is 
+ either empty or a singleton set consisting of $f_{ij}$.
 - If $f_{ji}$ exists for $f_{ij}$, then
   $f_{ji} \circ f_{ij} = f_{ii} \quad \text{and} \quad f_{ij} \circ f_{ji} = f_{jj},$
   so $f_{ji}$ is the inverse of $f_{ij}$, and $i$ and $j$ are **isomorphic objects** (essentially the same).
