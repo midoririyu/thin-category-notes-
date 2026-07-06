@@ -22,27 +22,25 @@ Let $A$ be a class. For any $i \in A$ and any $j \in A$, there is at most one th
 
 1. If $A$ is non-empty, then for every $i \in A$, $f_{ii}$ exists.
 2. For any $i,j,k \in A$, if $f_{ij}$ and $f_{jk}$ exist, then $f_{ik}$ necessarily exists, and the operation $\circ$ is defined by
-   $
+$$
    f_{jk} \circ f_{ij} := f_{ik}
-   $
-
+$$
+   
 In this definition, it can be shown that the operation $\circ$ is associative.
 
 **Proof**  
-$
+
+\begin{aligned}
 (f_{kl} \circ f_{jk}) \circ f_{ij} 
 = f_{jl} \circ f_{ij} 
 = f_{il} 
 = f_{kl} \circ f_{ik} 
 = f_{kl} \circ (f_{jk} \circ f_{ij})
-$
+\end{aligned}
 (Proof complete)
 
 Furthermore, for any $i,j \in A$,
-$
-f_{ij} \circ f_{ii} = f_{ij} = f_{jj} \circ f_{ij}
-$
-holds, so $f_{ii}$ can be regarded as the identity morphism at $i$.
+$f_{ij} \circ f_{ii} = f_{ij} = f_{jj} \circ f_{ij}$ holds, so $f_{ii}$ can be regarded as the identity morphism at $i$.
 
 Thus, $f_{ij}$ satisfies the definition of a morphism, and we can define a thin category with objects $i \in A$ and morphisms $f_{ij}$.
 
@@ -53,7 +51,7 @@ That is, the structure defined above is a **reformulation of thin categories**.
 
 ---
 
-Henceforth, any thin category will be denoted by $\mathcal{C}(A,f)$ or $\mathcal{C}_A$ using the notation from Definition 1 (where $f = \{f_{ij}\}_{i \in A, j \in A}$).
+Henceforth, any thin category will be denoted by $\mathcal{C}(A,f)$ or $\mathcal{C}$_A using the notation from Definition 1 (where $f = \{f_{ij}\}_{i \in A, j \in A}$).
 
 ## Basic Properties of Thin Category $\mathcal{C}_A$
 
