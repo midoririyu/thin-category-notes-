@@ -66,32 +66,26 @@ Let $A$ and $B$ be sets, and let $f : A \times A \to B$ be a map with $(i,j) \ma
 $f_{jk} \circ f_{ij} := f_{ik}$
 yields a thin category $\mathcal{C}(A,f)$.
 
-In particular, when $A = B$, i.e., for a magma $(A, *)$, defining the operation by
-$
-(j * k) \circ (i * j) := i * k
-$
-gives a thin category $\mathcal{C}(A,*)$.
+In particular, when $A = B$, i.e., for a magma $(A,* )$, defining the operation by
+$(j * k) \circ (i * j) := i * k$
+gives a thin category $\mathcal{C}(A,* )$.
 
-Furthermore, if $(A,*)$ is a semigroup with unit $e$, then $\mathcal{C}(A,*)$ becomes a (thin) **monoidal category** with unit object $e$ and monoidal operation $*$.
+Furthermore, if $(A,* )$ is a semigroupwith unit $e$, then $\mathcal{C}(A,* )$ becomes a (thin) **monoidal category** with unit object $e$ and monoidal operation $*$.
 
 ### Example 3: Enrichment Examples
 
-Let $f : A \times A \to B$ be a map from a set $A$ to a semigroup $(B,*)$ with unit $e$, satisfying the composition law and $f_{ii} = e$ for all $i$. Then $\mathcal{C}(A,f)$ is a (thin) **enriched category** over the monoidal category $\mathcal{C}(B,*)$.
+Let $f : A \times A \to B$ be a map from a set $A$ to a semigroup $(B,* )$ with unit $e$, satisfying the composition law and $f_{ii} = e$ for all $i$. Then $\mathcal{C}(A,f)$ is a (thin) **enriched category** over the monoidal category $\mathcal{C}(B,* )$.
 
 **Metric Space Example**  
 Let $A$ be a metric space with distance $d_{ij}$. Then $\mathcal{C}(A,d)$ is a thin category satisfying
-$
-d_{jk} \circ d_{ij} = d_{ik} \leq d_{jk} + d_{ij}.
-$
+$d_{jk} \circ d_{ij} = d_{ik} \leq d_{jk} + d_{ij}.$
 
-Viewing the non-negative reals $\mathbb{R}_{\geq 0}$ as a monoidal category $\mathcal{C}(\mathbb{R}_{\geq 0}, +)$ with addition as the monoidal operation and $0$ as the unit, $\mathcal{C}(A,d)$ becomes a (thin) **enriched category** over it.
+Viewing the non-negative reals $R_{\geq 0}$ as a monoidal category $\mathcal{C}(R_{\geq 0}, +)$ with addition as the monoidal operation and $0$ as the unit, $\mathcal{C}(A,d)$ becomes a (thin) **enriched category** over it.
 
 ### Example 4: Construction from Any Locally Small Category
 
 For any locally small category $\mathcal{C}$, let $\mathrm{Ob}(\mathcal{C})$ be the class of objects, and let $h_{ij} = \mathrm{hom}(i,j)$. Defining the operation by
-$
-h_{jk} \circ h_{ij} := h_{ik}
-$
+$h_{jk} \circ h_{ij} := h_{ik}$
 yields a thin category $\mathcal{C}(\mathrm{Ob}(\mathcal{C}), h)$.
 
 **Note**  
@@ -118,6 +112,12 @@ In particular, when $A$ is a **set**, the relation $i \mathrel{f} j$ satisfies t
 Furthermore, $\mathcal{C}(A,f)$ being **skeletal** (i.e., $f_{ij}$ and $f_{ji}$ existing implies $i = j$) is equivalent to $A$ being a partially ordered set.
 
 If $\mathcal{C}(A,f)$ is skeletal and strongly connected, then $A$ is a totally ordered set.
+ 
 
 **Example with the Class of All Sets**  
-Let $A = \mathbf{Set}$, the class of all sets, and consider the inclusion relation $i \subset j$. This satisfies the above conditions and is antisymmetric. Since $\mathbf{Set}$ is a proper class, $\mathcal{C}(\mathbf{Set}, \subset)$ is a **skeletal thin category that is not small**.
+Let $A=Set$, the class of all sets, and consider the inclusion relation $i \subset j$. This satisfies the above conditions and is antisymmetric. Since $Set$ is a proper class, $C(Set,\subset)$ is a skeletal thin category that is not small.
+
+
+
+
+
