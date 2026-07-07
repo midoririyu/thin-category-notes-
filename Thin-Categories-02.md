@@ -5,9 +5,9 @@ Subcategories of Thin Categories
 
 ## Definition of Subcategories
 
-For a thin category $\mathcal{C}(A, \{f_{ij}\}_{i \in A, j \in A})$, the category $\mathcal{C}(B, \{f_{ij}\}_{i \in B, j \in B})$ induced by a **subclass** $B \subseteq A$ is naturally defined.
+For a thin category $C(A, f_{ij})(i \in A, j \in A)$, the category $C(B, f_{ij})(i \in B, j \in B)$ induced by a **subclass** $B \subseteq A$ is naturally defined.
 
-Furthermore, let $L$ be a subclass of $\{f_{ij}\}_{i \in B, j \in B}$ satisfying the following two conditions:
+Furthermore, let $L$ be a subclass of { $f_{ij}$ } $(i \in B, j \in B)$ satisfying the following two conditions:
 
 1. $L$ is either empty, or $f_{ii} \in L$ for every $i \in B$.
 2. If $f_{ij} \in L$ and $f_{jk} \in L$, then $f_{jk} \circ f_{ij} = f_{ik} \in L$.
@@ -16,22 +16,22 @@ In this case, $L$ can be regarded as a class of morphisms equipped with the oper
 
 ## The Category of All Subcategories
 
-Let $\mathfrak{C}_A$ denote the collection of all subcategories of the thin category $\mathcal{C}_A$.
+Let $ℭ_A$ denote the collection of all subcategories of the thin category $\mathcal{C}_A$.
 
-For $\mathcal{C}_1, \mathcal{C}_2 \in \mathfrak{C}_A$, we write $\mathcal{C}_1 \subset \mathcal{C}_2$ if $\mathcal{C}_1$ is a subcategory of $\mathcal{C}_2$. This inclusion relation defines a **skeletal thin category** $\mathcal{C}(\mathfrak{C}_A, \subset)$.
+For $\mathcal{C}_1, \mathcal{C}_2 \in ℭ_A$, we write $\mathcal{C}_1 \subset \mathcal{C}_2$ if $\mathcal{C}_1$ is a subcategory of $\mathcal{C}_2$. This inclusion relation defines a **skeletal thin category** $\mathcal{C}(ℭ_A, \subset)$.
 
 In this category:
 - The **initial object** is $\mathcal{C}(\text{empty class}, \text{empty class})$ (the empty category).
 - The **terminal object** is $\mathcal{C}(A, \{f_{ij}\}_{i \in A, j \in A})$ (the original category $\mathcal{C}_A$).
 
-When $A$ is a set, $\mathcal{C}(\mathfrak{C}_A, \subset)$ is a skeletal thin small category (i.e., a partially ordered set).
+When $A$ is a set, $\mathcal{C}(ℭ_A, \subset)$ is a skeletal thin small category (i.e., a partially ordered set).
 
 ## Number of Subcategories
 
-In particular, when $A$ is a set of cardinality $n$, the number of objects $\#\mathfrak{C}_A$ is given by the formula:
+In particular, when $A$ is a set of cardinality $n$, the number of objects $\#ℭ_A$ is given by the formula:
 
 $$
-\#\mathfrak{C}_A = \sum_{k=0}^{n} \binom{n}{k} P(k)
+\#ℭ_A = \sum_{k=0}^{n} \binom{n}{k} P(k)
 $$
 
 where $P(k)$ is the number of preorders on a set with $k$ elements.
@@ -63,7 +63,7 @@ Let $A = \{1, 2\}$ and $\operatorname{hom}(\mathcal{C}_A) = \{f_{11}, f_{12}, f_
 
 
 
-Indeed, the number of elements in $\mathcal{C}(\mathfrak{C}_A, \subset)$ is
+Indeed, the number of elements in $\mathcal{C}(ℭ_A, \subset)$ is
 
 $$
 \sum_{k=0}^{2} \binom{2}{k} P(k) = 1\cdot1 + 2\cdot1 + 1\cdot4 = 7.
