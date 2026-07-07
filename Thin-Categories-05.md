@@ -10,8 +10,8 @@ Below, we present a more standard method for constructing thin categories.
 ## Standard Construction of a Thinning
 
 **Construction**  
-For any $i,j \in Ob(\mathcal{C})$, if $Hom(i,j)$ is non-empty, choose any one element $f_{ij}'$.  
-If $Hom(i,j)$ is empty, then $f_{ij}'$ does not exist.
+For any $i,j \in Ob(\mathcal{C})$, if $Hom(i,j)$ is non-empty, choose any one entity $f_{ij}$'.  
+If $Hom(i,j)$ is empty, then $f_{ij}$' does not exist.
 
 Then $\mathcal{C}(Ob(\mathcal{C}), \{f_{ij}'\}_{i,j \in Ob(\mathcal{C})})$ is a thin category.
 
@@ -21,18 +21,17 @@ $g_{jk}' \circ f_{ij}' := g \circ f_{ik}'.$
 Then $f_{ij}'$ satisfies the conditions of Definition 1 in "Thin Categories (1)" as a generalized binary operation. Hence $\mathcal{C}(Ob(\mathcal{C}), \{f_{ij}'\}_{i,j \in Ob(\mathcal{C})})$ is a thin category. (Proof complete)
 
 **Example**  
-If a proof of the proposition "A &\Rightarrow& B" is accepted (even one such proof), then the proposition "A $\Rightarrow$ B" is established as true. In this way, one can construct a thin "propositional logic category" from a thick "category of proofs".
+If a proof of the proposition "A $\Rightarrow$ B" is accepted (even one such proof), then the proposition "A $\Rightarrow$ B" is established as true. In this way, one can construct a thin "propositional logic category" from a thick "category of proofs".
 
 ## Thinning Functor
 
 Using the above construction, define a map on objects by $T(i) = i$ and on morphisms by $T(f : i \to j) = f_{ij}'$. This yields a **thinning functor**
-$$
-T : \mathcal{C} \to \mathcal{C}(Ob(\mathcal{C}), \{f_{ij}'\}_{i,j \in Ob(\mathcal{C})}).
-$$
+$T : \mathcal{C} \to \mathcal{C}(Ob(\mathcal{C}), \{f_{ij}'\}_{i,j \in Ob(\mathcal{C})}).$
 That $T$ is a functor follows from Proposition 3-1 in "Thin Categories (3)".
 
 **Remark**  
-In particular, if we choose $f_{ij}'$ from an element of $Hom(i,j)$ and take $f'_{ii}$ to be the identity morphism $\mathrm{id}_i$ in $\mathcal{C}$, then $\mathcal{C}(Ob(\mathcal{C}), \{f_{ij}'\}_{i,j \in Ob(\mathcal{C})})$ becomes a **subcategory** of $\mathcal{C}$.
+In particular, if we choose $f_{ij}'$ from an element of $Hom(i,j)$ and take $f_{ii}'$ to be the identity morphism $id_i$ in $\mathcal{C}$, then $C(Ob(\mathcal{C}),f_{ij}')
+(i,j \in Ob(\mathcal{C}))$ becomes a **subcategory** of $\mathcal{C}$.
 
 ## Composition of Thin Subcategories
 
