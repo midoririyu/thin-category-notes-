@@ -109,7 +109,7 @@ $\beta_{F(j)} \circ G(F(f)) = G'(F'(f)) \circ \beta_{F(i)}.$
 This demonstrates that the composite functors $G \circ F$ and $G' \circ F'$ from $\mathcal{C}$ to $\mathcal{E}$ are naturally isomorphic.
 
 #### 2. Existence of Identity Morphisms
-Let $[F]_{CC} := \{ F' : \mathcal{C} \to \mathcal{C} \mid F' \text{ is a functor naturally isomorphic to } F \}$. 
+Let $[F]_{CC} := ｛ F' : \mathcal{C} \to \mathcal{C} \mid F' \text{ is a functor naturally isomorphic to } F ｝$. 
 
 For any morphism $[F]_{CD}$, this class satisfies both $[F]_{DD} \circ [F]_{CD} = [F]_{CD}$ and $[F]_{CD} \circ [F]_{CC} = [F]_{CD}$, thereby serving as the identity morphism. (Proof complete)
 
