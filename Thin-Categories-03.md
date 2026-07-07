@@ -108,6 +108,32 @@ If $T$ is essentially surjective, then universal objects in $\mathcal{C}$ are ma
 **Proposition 3-8**  
 Let $T : C_A \to C_B$ be a functor between thin categories with $T : A \to B$ injective on objects. Then there exists a functor $T': T(C_A) \to C_A$ defined by $T'(T(i)) = i$ and $T'(g_{T(i)T(j)}) = f_{ij}$, and $T$ is left adjoint to $T'$ ($T \dashv T'$).
 
+**Proof**  
+First, the definition that a functor $T: \mathcal{C} \to \mathcal{D}$ is a left adjoint functor of $T': \mathcal{D} \to \mathcal{C}$ is given using the unit of adjunction (universal morphism) as follows.  
+"For any object $i \in \mathrm{Ob}(\mathcal{C})$, there exists a pair $(T(i), \eta_i)$ that satisfies the following two conditions:  
+1. $\eta_i: i \to T'(T(i))$ is a morphism in $\mathcal{C}$.  
+2. For any object $k \in \mathrm{Ob}(\mathcal{D})$ and any morphism $f: i \to T'(k)$, there exists a unique morphism $g: T(i) \to k$ in \mathcal{D} such that $f = T'(g) \circ \eta_i$ holds."
+
+   
+In this proposition, let $\mathcal{C} = C_A$ and $\mathcal{D} = T(C_A)$, and the proof is carried out based on the above definition.
+
+1. Existence of the unit of adjunction $\eta$  
+For any $i \in A$, $T'(T(i)) = i$ is uniquely determined by the injectivity of $T$ with respect to objects.  
+At this time, $\eta_i: i \to T'(T(i))$ is given as the identity morphism $\mathrm{id}_i: i \to i$. Since $C_A$ is a category, the identity morphism always exists, and this is a morphism of $C_A$.
+
+2. Verification of universality (unique factorization property)  
+Consider any $k \in \mathrm{Ob}(T(C_A))$ and a morphism $f_{i T'(k)}$ in $C_A$.  
+By the definition of the image, there exists $j \in A$ such that $k = T(j)$, and from the definition of $T'$, $T'(k) = j$ holds. Therefore, $f_{i T'(k)}=f_{ij}$.  
+At this time, if the morphism $g_{T(i)T(j)}$ exists in $T(C_A)$, then from the definition of the functor $T'$ regarding morphisms, $T'(g_{T(i)T(j)}) = f_{ij}$, the following holds:  
+$T'(g) \circ \eta_i = f_{ij} \circ id_i = f_{ij}.$
+
+3. Verification of uniqueness  
+The uniqueness of the morphism $g_{T(i)k}$ holds because $T(C_A)$ is a thin category.  
+
+From the above, the adjunction relation $T \dashv T'$ with the identity morphism as the unit has been shown.  
+(Proof complete)
+
+
 **Note**  
 When $C_A$ and $C_B$ are skeletal (i.e., $A$ and $B$ are posets), $T$ and $T'$ form a Galois connection.
 
