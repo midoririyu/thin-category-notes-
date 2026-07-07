@@ -89,7 +89,33 @@ Apply the antisymmetry condition $i \leq j$ and $j \leq i$ implies $i = j$ to Pr
 **Proposition 3-5** (Left Universal Objects)  
 Let $T : \mathcal{C} \to C(B,g)$ be a functor from a locally small category $\mathcal{C}$. If $i$ is a (left) universal object in $\mathcal{C}$, then $T(i)$ is a (left) universal object in $T(\mathcal{C})$. In particular, if $T$ is essentially surjective, then $T(i)$ is a (left) universal object in $C(B,g)$.
 
-(Proof follows the standard argument using the representing property of the Hom functor and natural isomorphisms, adapted to the thin setting.)
+**Proof**  
+First, the definition of a (left) universal object $i$ in a category $\mathcal{C}$ is given as: "there exists a functor $G: \mathcal{C} \to \mathbf{Set}$ that is naturally isomorphic to the $Hom$ functor $h^i = Hom(i, -)$ represented by $i$, and for each object $x$ and any $v \in G(x)$, there uniquely exists a morphism $f \in Hom(i, x)$ such that $G(f)(u) = v$ holds." (Here, $u$ is the universal element in $G(i)$ corresponding to the identity morphism $id_i$ of $h^i$.)  
+We show the proposition based on this definition.  
+
+Taking any $x \in \mathrm{Ob}(\mathcal{C})$ such that $Hom(i, x) \neq \emptyset$, the image $Hom(T(i), T(x))$ is also not empty by the properties of a functor. Here, due to the thinness of $T(\mathcal{C})$, this morphism set is a singleton set consisting of a unique element. Therefore, by setting this singleton set as $G'(T(x))$, we define a functor $G': T(\mathcal{C}) \to \mathbf{Set}$. At this time, $G'$ is naturally isomorphic to the $Hom$ functor $h^{T(i)} = Hom(T(i), -)$ represented by $T(i)$.  
+
+(Proof) By assumption, there exists a functor $G: \mathcal{C} \to \mathbf{Set}$ that is naturally isomorphic to the $Hom$ functor $h^i = Hom(i, -)$. That is, for any $x \in \mathrm{Ob}(\mathcal{C})$, a morphism in $\mathbf{Set}$  
+$α_x: Hom(i, x) \to G(x)$ is defined, and  
+for any morphism $f: x \to y$ in $\mathcal{C}$,  
+$α_y \circ h^i(f) = G(f) \circ α_x$ holds. Note here that since the existence of $h^i(f): Hom(i, x) \to Hom(i, y)$ is guaranteed, by the functoriality of $T$, $h^{T(i)}(T(f)): Hom(T(i), T(x)) \to Hom(T(i), T(y))$ exists.  
+
+Let $α_{T(x)}': Hom(T(i), T(x)) \to G'(T(x))$.  
+(In fact, from the definition of $G'$, $α_{T(x)}'$ is the identity morphism.)  
+$G'(T(f)): G'(T(x)) \to G'(T(y))$ is the same morphism as $h^{T(i)}(T(f)): Hom(T(i), T(x)) \to Hom(T(i), T(y))$, and  
+for any morphism $f: x \to y$ in $\mathcal{C}$,  
+$α_{T(y)}7 \circ h^{T(i)}(T(f)) = G'(T(f)) \circ α_{T(x)}'$ holds.  
+In addition, for any $x \in \mathrm{Ob}(\mathcal{C})$, the inverse morphism of $α_{T(x)}':G'(T(x)) \to Hom(T(i), T(x))$ also exists (as the identity morphism). Thus, $G'$ is naturally isomorphic to $h^{T(i)}$. (End of Proof)  
+
+Let $u'$ be the universal element of $G'(T(i))$ corresponding to the identity morphism $id_{T(i)}$ of $h^{T(i)}$. That is, $u'$ is $id_{T(i)}$ itself. At this time,  
+in $G'(T(f)): Hom(T(i), T(x)) \to Hom(T(i), T(y))$,  
+since $G'(f')(u') = f' \circ id_{T(i)} = f'$,  
+for any morphism $v' = g_{T(i)T(x)} \in G'(T(x))$, the morphism $f'$ satisfying $G'(f')(u') = v'$ is $v' = g_{T(i)T(x)}$ itself,  
+and by the thinness of $T(\mathcal{C})$, this is unique.  
+
+From the above, $T(i)$ is a (left) universal object in $T(\mathcal{C})$.  
+Furthermore, if $T$ is assumed to be essentially surjective, any $b \in B$ is isomorphic to some $T(x)$, so $g_{T(x)b}$ exists. By the functoriality of $T$, $g_{T(i)T(x)}$ can be obtained, and since $g_{T(i)b} = g_{T(x)b} \circ g_{T(i)T(x)}$ exists, $T(i)$ becomes a (left) universal object in the entire $\mathcal{C}(B, g)$.
+(End of Proof of Proposition 3-5)
 
 **Note**  
 Examples of left universal objects: initial objects, coproducts, coequalizers, etc.
@@ -119,7 +145,7 @@ In this proposition, let $\mathcal{C} = C_A$ and $\mathcal{D} = T(C_A)$, and the
 
 1. Existence of the unit of adjunction $\eta$  
 For any $i \in A$, $T'(T(i)) = i$ is uniquely determined by the injectivity of $T$ with respect to objects.  
-At this time, $\eta_i: i \to T'(T(i))$ is given as the identity morphism $\mathrm{id}_i: i \to i$. Since $C_A$ is a category, the identity morphism always exists, and this is a morphism of $C_A$.
+At this time, $\eta_i: i \to T'(T(i))$ is given as the identity morphism $id_i: i \to i$. Since $C_A$ is a category, the identity morphism always exists, and this is a morphism of $C_A$.
 
 2. Verification of universality (unique factorization property)  
 Consider any $k \in \mathrm{Ob}(T(C_A))$ and a morphism $f_{i T'(k)}$ in $C_A$.  
