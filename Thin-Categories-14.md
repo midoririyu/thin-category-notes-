@@ -7,13 +7,11 @@ First, we recall the definition of a coend (or co-integral) in a general categor
 
 ## Definition of Coend (in General Categories)
 
-For a functor $S: \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$, the **coend** $\int^c S(c,c)$ consists of an object $d \in \operatorname{Ob}(\mathcal{D})$ and a family of morphisms $\omega_c: S(c,c) \to d$ indexed by objects (called a **co-wedge** or **dinatural transformation**), satisfying the following two conditions:
+For a functor $S: \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$, the **coend** $\int^c S(c,c)$ consists of an object $d \in Ob(\mathcal{D})$ and a family of morphisms $\omega_c: S(c,c) \to d$ indexed by objects (called a **co-wedge** or **dinatural transformation**), satisfying the following two conditions:
 
 - **Co-wedge condition**: For every morphism $f: c \to c'$ in $\mathcal{C}$, the following diagram commutes:
-  $$
-  \omega_{c'} \circ S(c,f) = \omega_c \circ S(f,c').
-  $$
-- **Universal property**: For any object $d' \in \operatorname{Ob}(\mathcal{D})$ and any co-wedge $\omega'_c: S(c,c) \to d'$, there exists a unique morphism $h: d \to d'$ such that $\omega'_c = h \circ \omega_c$ for all $c \in \operatorname{Ob}(\mathcal{C})$.
+  $\omega_{c'} \circ S(c,f) = \omega_c \circ S(f,c').$
+- **Universal property**: For any object $d' \in Ob(\mathcal{D})$ and any co-wedge $\omega'_c: S(c,c) \to d'$, there exists a unique morphism $h: d \to d'$ such that $\omega'_c = h \circ \omega_c$ for all $c \in Ob(\mathcal{C})$.
 
 ## Coend in Thin Categories
 
@@ -22,18 +20,16 @@ When the target category $\mathcal{D}$ is thin, morphisms between any two object
 Thus, the definition of a coend in a thin category can be simplified as follows:
 
 **Definition**  
-An object $d \in \operatorname{Ob}(\mathcal{D})$ is a coend $\int^c S(c,c)$ if it satisfies the following two conditions:
+An object $d \in Ob(\mathcal{D})$ is a coend $\int^c S(c,c)$ if it satisfies the following two conditions:
 
-1. For every $c \in \operatorname{Ob}(\mathcal{C})$, there exists a morphism $S(c,c) \to d$.
-2. For any object $d' \in \operatorname{Ob}(\mathcal{D})$, if there exists a morphism $S(c,c) \to d'$ for every $c \in \operatorname{Ob}(\mathcal{C})$, then there exists a morphism $d \to d'$.
+1. For every $c \in Ob(\mathcal{C})$, there exists a morphism $S(c,c) \to d$.
+2. For any object $d' \in Ob(\mathcal{D})$, if there exists a morphism $S(c,c) \to d'$ for every $c \in Ob(\mathcal{C})$, then there exists a morphism $d \to d'$.
 
 ## Proposition 14-1
 
 **Proposition 14-1**  
-Let $\mathcal{D}$ be a thin locally small category. For a functor $S: \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$, define the subclass $B \subseteq \operatorname{Ob}(\mathcal{D})$ by
-$$
-B = \{ S(c,c) \mid c \in \operatorname{Ob}(\mathcal{C}) \}.
-$$
+Let $\mathcal{D}$ be a thin locally small category. For a functor $S: \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$, define the subclass $B \subseteq Ob(\mathcal{D})$ by
+$B = ｛ S(c,c) \mid c \in Ob(\mathcal{C})｝.$
 
 If the supremum $\sup B$ exists in $\mathcal{D}$ (choosing one if there are multiple), then $d = \sup B$ is isomorphic to the coend $\int^c S(c,c)$ of the functor $S$. If $\sup B$ does not exist, then the coend is not defined.
 
@@ -41,65 +37,95 @@ If the supremum $\sup B$ exists in $\mathcal{D}$ (choosing one if there are mult
 We verify that $\sup B$ satisfies the simplified definition of a coend in thin categories, using the upper bound and least upper bound properties.
 
 **Step 1: Co-wedge condition (upper bound property)**  
-Let $d = \sup B$. By the upper bound property, there is a morphism from every element of $B$ to $d$. Since elements of $B$ are of the form $S(c,c)$, this means that for every $c \in \operatorname{Ob}(\mathcal{C})$, there exists a morphism $S(c,c) \to d$. This satisfies condition 1 of the simplified definition.
+Let $d = \sup B$. By the upper bound property, there is a morphism from every element of $B$ to $d$. Since elements of $B$ are of the form $S(c,c)$, this means that for every $c \in Ob(\mathcal{C})$, there exists a morphism $S(c,c) \to d$. This satisfies condition 1 of the simplified definition.
 
 **Step 2: Universal property (least upper bound property)**  
-Let $d' \in \operatorname{Ob}(\mathcal{D})$ be another co-wedge, i.e., suppose there exists a morphism $S(c,c) \to d'$ for every $c \in \operatorname{Ob}(\mathcal{C})$. This means $d'$ is an upper bound of $B$. By the least upper bound property of $d = \sup B$, there exists a morphism $d \to d'$. Since $\mathcal{D}$ is thin, this morphism is unique, satisfying condition 2 of the simplified definition.
+Let $d' \in Ob(\mathcal{D})$ be another co-wedge, i.e., suppose there exists a morphism $S(c,c) \to d'$ for every $c \in Ob(\mathcal{C})$. This means $d'$ is an upper bound of $B$. By the least upper bound property of $d = \sup B$, there exists a morphism $d \to d'$. Since $\mathcal{D}$ is thin, this morphism is unique, satisfying condition 2 of the simplified definition.
 
 Thus $\sup B$ satisfies the conditions for a coend. If another coend exists, the universal property implies they are isomorphic:
-$$
-\int^c S(c,c) \cong \sup B.
-$$
+$\int^c S(c,c) \cong \sup B.$
 Conversely, if a coend exists but $\sup B$ does not, it would contradict the argument above. Hence, if $\sup B$ does not exist, neither does the coend. (Proof complete)
 
 ## Propositions on Integration in Thin Categories
 
 We now show that analogous results to those in Lebesgue integration theory also hold in thin categories.
 
-For simplicity, we write “there exists a morphism $a \to b$” simply as “$a \to b$”. We also use notation such as $\sup_i b_i := \sup\{b_i \in \mathcal{C} \mid i \in I\}$.
+For simplicity, we write “there exists a morphism $a \to b$” simply as “$a \to b$”. We also use notation such as $\sup_i b_i := \sup｛b_i \in \mathcal{C} \mid i \in I｝$.
 
 **Proposition 14-2** (Fatou’s Lemma analogue)  
-$$
-\int^c \sup_n \inf_{k \geq n} S_k(c,c) \to \sup_n \inf_{k \geq n} \int^c S_k(c,c).
-$$
+$\int^c \sup_n \inf_{k \geq n} S_k(c,c) \to \sup_n \inf_{k \geq n} \int^c S_k(c,c).$
 (In terms of the order $\leq$, this corresponds to $\int^c \liminf S_k(c,c) \leq \liminf \int^c S_k(c,c)$.)
+
+**Proof of Proposition 14-2**
+
+In a thin category, $\int^c (\cdot) \cong \sup_c (\cdot)$. Therefore, the domain of the desired morphism is $\sup_c \sup_n \inf_{k \geq n} S_k(c,c)$, and the codomain is $\sup_n \inf_{k \geq n} \sup_c S_k(c,c)$.
+
+First, we recall a basic property of suprema and infima (monotonicity / preservation of morphisms):
+
+**Lemma.** For any $a \in A$ and $b \in B$, if $a \to b$, then $\sup A \to \sup B$ and $\inf A \to \inf B$.
+(Proof.)Since $b \to \sup B$ (by the upper bound property of the supremum) and $a \to b$, composition gives $a \to \sup B$. By the least upper bound property of $\sup A$, we obtain $\sup A \to \sup B$.
+
+Similarly, $ \inf A \to a$ (by the lower bound property), so $\inf A \to b$ by composition. Then, by the greatest lower bound property of $\inf B$, we have $\inf A \to \inf B$.  (Proof of lemma is completed)
+
+For any $c' \in \mathcal{C}$, we have $S_k(c',c') \to \sup_c S_k(c,c)$. By the lemma above,
+
+$\inf_{k \geq n} S_k(c',c') \ \to \ \inf_{k \geq n} \sup_c S_k(c,c).$
+
+Taking the supremum over $c' \in \mathcal{C}$ yields
+
+$\sup_{c'} \inf_{k \geq n} S_k(c',c') \ \to \ \inf_{k \geq n} \sup_c S_k(c,c).$
+
+Finally, taking the supremum over $n$ gives the desired morphism.  
+(Proof of Proposition 14-2 is completed)
+
+### Basic Lemma (Exchange and Associativity of Suprema)
+
+For index classes $I$ and $J$,
+
+$\sup_{(i,j) \in I \times J} a_{i,j} \ \cong \ \sup_{i \in I} \sup_{j \in J} a_{i,j}.$
+
+**Proof of the Basic Lemma**
+By the upper bound property, for any $i,j$ we have the chain $a_{i,j} \to \sup_j a_{i,j} \to \sup_i \sup_j a_{i,j}$. By the least upper bound property, $\sup_{(i,j)} a_{i,j} \to \sup_i \sup_j a_{i,j}$.
+
+Conversely, $a_{i,j} \to \sup_{(i,j)} a_{i,j}$. Taking the supremum first over $j$ for fixed $i$ gives $\sup_j a_{i,j} \to \sup_{(i,j)} a_{i,j}$. Then taking the supremum over $i$ yields $\sup_i \sup_j a_{i,j} \to \sup_{(i,j)} a_{i,j}$.
+
+Since morphisms exist in both directions, the two objects are isomorphic.  (Proof of the Basic Lemma is completed)
 
 **Proposition 14-3** (Lebesgue’s Dominated Convergence Theorem analogue)  
 For functors $F_i: \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$ indexed by $i \in I$,
-$$
-\sup_i \int^c F_i(c,c) \cong \int^c \sup_i F_i(c,c).
-$$
+$\sup_i \int^c F_i(c,c) \cong \int^c \sup_i F_i(c,c).$
+
+**Proof of Proposition 14-3**
+In a thin category, $\int^c (\cdot) \cong \sup_c (\cdot)$. By the Basic Lemma, suprema can be freely exchanged and associated. Therefore, the two sides are isomorphic.  (Proof  complete)
+
 
 **Proposition 14-4** (Fubini’s Theorem analogue)  
-$$
-\int^{(x,y)} F(x,y,x,y) \cong \int^x \int^y F(x,y,x,y) \cong \int^y \int^x F(x,y,x,y).
-$$
+$\int^{(x,y)} F(x,y,x,y) \cong \int^x \int^y F(x,y,x,y) \cong \int^y \int^x F(x,y,x,y).$
 
-(These follow from the interchange law for suprema: $\sup_i \sup_j a_{ij} \cong \sup_{(i,j)} a_{ij}$.)
+**Proof of Proposition 14-4**
+Rewriting coends as suprema, the statement becomes
+$\sup_{(x,y)} F(x,y,x,y) \ \cong \ \sup_x \sup_y F(x,y,x,y) \ \cong \ \sup_y \sup_x F(x,y,x,y),$
+
+which is a direct consequence of the Basic Lemma.  (Proof  complete)
+
 
 ## The Case of Ends
 
 The definition of an **end** $\int_c S(c,c)$ in a thin category can also be simplified.
 
-An object $d \in \operatorname{Ob}(\mathcal{D})$ is an end if it satisfies the following two conditions:
+An object $d \in Ob(\mathcal{D})$ is an end if it satisfies the following two conditions:
 
-- **Lower bound property**: For every $c \in \operatorname{Ob}(\mathcal{C})$, there exists a morphism $d \to S(c,c)$.
-- **Greatest lower bound property**: For any object $d' \in \operatorname{Ob}(\mathcal{D})$, if there exists a morphism $d' \to S(c,c)$ for every $c \in \operatorname{Ob}(\mathcal{C})$, then there exists a morphism $d' \to d$.
+- **Lower bound property**: For every $c \in Ob(\mathcal{C})$, there exists a morphism $d \to S(c,c)$.
+- **Greatest lower bound property**: For any object $d' \in Ob(\mathcal{D})$, if there exists a morphism $d' \to S(c,c)$ for every $c \in Ob(\mathcal{C})$, then there exists a morphism $d' \to d$.
 
 **Proposition 14-5**  
-Let $\mathcal{D}$ be a thin locally small category. For a functor $S: \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$, let $B = \{S(c,c) \mid c \in \operatorname{Ob}(\mathcal{C})\}$. If the infimum $\inf B$ exists in $\mathcal{D}$, then $\int_c S(c,c) \cong \inf B$. If $\inf B$ does not exist, the end is not defined.
+Let $\mathcal{D}$ be a thin locally small category. For a functor $S: \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$, let $B = ｛S(c,c) \mid c \in Ob(\mathcal{C})｝$. If the infimum $\inf B$ exists in $\mathcal{D}$, then $\int_c S(c,c) \cong \inf B$. If $\inf B$ does not exist, the end is not defined.
 
 **Proposition 14-6** (Fatou’s Lemma for Ends)  
-$$
-\inf_n \sup_{k \geq n} \int_c S_k(c,c) \to \int_c \inf_n \sup_{k \geq n} S_k(c,c).
-$$
+$\inf_n \sup_{k \geq n} \int_c S_k(c,c) \to \int_c \inf_n \sup_{k \geq n} S_k(c,c).$
 
 **Proposition 14-7** (Lebesgue’s Convergence Theorem for Ends)  
-$$
-\inf_i \int_c F_i(c,c) \cong \int_c \inf_i F_i(c,c).
-$$
+$\inf_i \int_c F_i(c,c) \cong \int_c \inf_i F_i(c,c).$
 
 **Proposition 14-8** (Fubini’s Theorem for Ends)  
-$$
-\int_{(x,y)} F(x,y,x,y) \cong \int^x \int^y F(x,y,x,y) \cong \int^y \int^x F(x,y,x,y).
-$$
+$\int_{(x,y)} F(x,y,x,y) \cong \int^x \int^y F(x,y,x,y) \cong \int^y \int^x F(x,y,x,y).$
