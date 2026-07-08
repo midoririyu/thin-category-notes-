@@ -18,7 +18,8 @@ This (generalized) relation $\prec$ satisfies the following properties:
 
 (The proofs of 1–4 follow directly from the definition of $\prec$.)
 
-Let $H_A$ be the collection of all possible "collections of morphisms" on $A$ (i.e., $H_A = \{f \mid f = \{f_{ij}\}_{i,j \in A}\}$).  
+Let $H_A$ be the collection of all possible "collections of morphisms" on $A$ i.e., $H_A$ =｛f| $f=｛f_{ij}
+｝(i,j\in A)$｝.
 Since $\prec$ satisfies properties 1 and 2, we can apply Example 5 from "Thin Categories (1)" to obtain a thin category $\mathcal{C}(H_A, \prec)$.
 
 By properties 3 and 4, in the category $\mathcal{C}(H_A, \prec)$, a discrete collection of morphisms $f$ is an **initial object**, and a strongly connected collection of morphisms $f$ is a **terminal object**.
@@ -28,13 +29,11 @@ By properties 3 and 4, in the category $\mathcal{C}(H_A, \prec)$, a discrete col
 Fix arbitrary classes $A$ and $B$. Suppose that for each $f,f' \in H_A$ and $g,g' \in H_B$, there exist full functors $F : \mathcal{C}(A,f) \to \mathcal{C}(B,g)$ and $F' : \mathcal{C}(A,f') \to \mathcal{C}(B,g')$.
 
 We define a functor $\bar{F} : \mathcal{C}(H_A, \prec) \to \mathcal{C}(H_B, \prec)$ by
-$$
-\bar{F}(f) := F(f) = \{g_{F(i)F(j)}\}_{i,j \in A}, \quad \bar{F}(\prec_{ff'}) := \prec_{F(f)F'(f')}.
-$$
+$\bar{F}(f) := F(f) = ｛g_{F(i)F(j)}(i,j \in A)｝, \quad \bar{F}(\prec_{ff'}) := \prec_{F(f)F'(f')}.$
 
 First, since $F$ is a functor, for every $f_{ij}$ there exists $g_{F(i)F(j)}$, so $\bar{F}(f)$ is well-defined.
 
-Furthermore, if $f_{ij}$ exists for all relevant $i,j$, and $f'_{ij}$ exists whenever $f_{ij}$ does, then by fullness of $F$, $f'_{ij}$ exists whenever $g_{F(i)F(j)}$ does, and by functoriality of $F'$, $g'_{F'(i)F'(j)}$ also exists. This shows that $\bar{F}(\prec_{ff'})$ is well-defined.
+Furthermore, if $f_{ij}$ exists for all relevant $i,j$, and $f_{ij}'$ exists whenever $f_{ij}$ does, then by fullness of $F$, $f_{ij}'$ exists whenever $g_{F(i)F(j)}$ does, and by functoriality of $F'$, $g_{F'(i)F'(j)}'$ also exists. This shows that $\bar{F}(\prec_{ff'})$ is well-defined.
 
 ## Proposition 6-1
 
@@ -49,10 +48,8 @@ Since $\mathcal{C}(H_A, \prec)$ is thin, by Proposition 3-3-1 in "Thin Categorie
 
 **(Fullness)**  
 By assumption, for $g \prec g'$ in $H_B$, there exist full functors $F,F'$ and $f,f' \in H_A$ such that for all $i,j \in A$,
-$$
-g_{F(i)F(j)} = F(f_{ij}), \quad g'_{F'(i)F'(j)} = F'(f'_{ij}).
-$$
-Thus, whenever $F(f)_{ij}$ exists, if $F'(f')_{ij}$ exists, we can choose $f,f'$ such that $f_{ij}$ exists precisely when $f'_{ij}$ does. This shows that $\bar{F}$ is full.
+$g_{F(i)F(j)} = F(f_{ij}), \quad g_{F'(i)F'(j)}' = F'(f_{ij}').$
+Thus, whenever $F(f)_{ij}$ exists, if $F'(f')_{ij}$ exists, we can choose $f,f'$ such that $f_{ij}$ exists precisely when $f_{ij}'$ does. This shows that $\bar{F}$ is full.
 
 **(Essential Surjectivity)**  
 Since $F$ is essentially surjective, for any $g_{kl}$ in $B$, there exist $i,j \in A$ such that $g_{kF(i)}$ and $g_{lF(j)}$ exist. By functoriality of $F$, $g_{F(i)F(j)}$ exists. This shows the existence of $\prec_{g \bar{F}(f)}$.
