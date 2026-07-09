@@ -1,4 +1,4 @@
-**[Back to Table of Contents](../README.md)**
+**[Back to Table of Contents](README.md)**
 
 # Thin Categories (14)  
 Coends and Ends in Thin Categories and Their Properties
@@ -54,20 +54,20 @@ For simplicity, we write “there exists a morphism $a \to b$” simply as “$a
 
 **Proposition 14-2** (Fatou’s Lemma analogue)  
 $\int^c \sup_n \inf_{k \geq n} S_k(c,c) \to \sup_n \inf_{k \geq n} \int^c S_k(c,c).$
+
 (In terms of the order $\leq$, this corresponds to $\int^c \liminf S_k(c,c) \leq \liminf \int^c S_k(c,c)$.)
 
 **Proof of Proposition 14-2**
 
 In a thin category, $\int^c (\cdot) \cong \sup_c (\cdot)$. Therefore, the domain of the desired morphism is $\sup_c \sup_n \inf_{k \geq n} S_k(c,c)$, and the codomain is $\sup_n \inf_{k \geq n} \sup_c S_k(c,c)$.
 
-First, we recall a basic property of suprema and infima (monotonicity / preservation of morphisms):
+First, we recall a basic property of  infima (monotonicity / preservation of morphisms):
 
-**Lemma.** For any $a \in A$ and $b \in B$, if $a \to b$, then $\sup A \to \sup B$ and $\inf A \to \inf B$.
-(Proof.)Since $b \to \sup B$ (by the upper bound property of the supremum) and $a \to b$, composition gives $a \to \sup B$. By the least upper bound property of $\sup A$, we obtain $\sup A \to \sup B$.
+For any $a \in A$ and $b \in B$, if $a \to b$, then $\inf A \to \inf B$.
 
-Similarly, $ \inf A \to a$ (by the lower bound property), so $\inf A \to b$ by composition. Then, by the greatest lower bound property of $\inf B$, we have $\inf A \to \inf B$.  (Proof of lemma is completed)
+(Proof.)Since $ \inf A \to a$ (by the lower bound property), so $\inf A \to b$ by composition. Then, by the greatest lower bound property of $\inf B$, we have $\inf A \to \inf B$.  (Proof of property is completed)
 
-For any $c' \in \mathcal{C}$, we have $S_k(c',c') \to \sup_c S_k(c,c)$. By the lemma above,
+For any $c' \in \mathcal{C}$, we have $S_k(c',c') \to \sup_c S_k(c,c)$. By the property of infima above,
 
 $\inf_{k \geq n} S_k(c',c') \ \to \ \inf_{k \geq n} \sup_c S_k(c,c).$
 
@@ -124,8 +124,10 @@ Let $\mathcal{D}$ be a thin locally small category. For a functor $S: \mathcal{C
 **Proposition 14-6** (Fatou’s Lemma for Ends)  
 $\inf_n \sup_{k \geq n} \int_c S_k(c,c) \to \int_c \inf_n \sup_{k \geq n} S_k(c,c).$
 
+(In terms of the order $\leq$, this corresponds to $\limsup \int_c S_k(c,c) \leq \int_c \limsup S_k(c,c)$.)
+
 **Proposition 14-7** (Lebesgue’s Convergence Theorem for Ends)  
 $\inf_i \int_c F_i(c,c) \cong \int_c \inf_i F_i(c,c).$
 
 **Proposition 14-8** (Fubini’s Theorem for Ends)  
-$\int_{(x,y)} F(x,y,x,y) \cong \int^x \int^y F(x,y,x,y) \cong \int^y \int^x F(x,y,x,y).$
+$\int_{(x,y)} F(x,y,x,y) \cong \int_x \int_y F(x,y,x,y) \cong \int_y \int_x F(x,y,x,y).$
