@@ -1,4 +1,4 @@
-**[Back to Table of Contents](../README.md)**
+**[Back to Table of Contents](README.md)**
 
 # Thin Categories (5)  
 A Standard Method for Constructing (Thinning) a Thin Category from a Locally Small Category
@@ -18,7 +18,7 @@ Then $\mathcal{C}(Ob(\mathcal{C}), ｛f_{ij}'｝)(i,j \in Ob(\mathcal{C}))$ is a
 **Proof**  
 Suppose morphisms $f : i \to j$ and $g : j \to k$ exist in $\mathcal{C}$. Then the composite $g \circ f : i \to k$ exists. By assumption, $f_{ij}'$, $g_{jk}'$, and $g \circ f_{ik}'$ each exist uniquely. Define
 $g_{jk}' \circ f_{ij}' := g \circ f_{ik}'.$
-Then $f_{ij}'$ satisfies the conditions of Definition 1 in "Thin Categories (1)" as a generalized binary operation. Hence $\mathcal{C}(Ob(\mathcal{C}), ｛f_{ij}'｝)(i,j \in Ob(\mathcal{C}))$ is a thin category. (Proof complete)
+Then $f_{ij}'$ satisfies the conditions of Definition  in "Thin Categories (1)" as a generalized binary operation. Hence $\mathcal{C}(Ob(\mathcal{C}), ｛f_{ij}'｝)(i,j \in Ob(\mathcal{C}))$ is a thin category. (Proof complete)
 
 **Example**  
 If a proof of the proposition "A $\Rightarrow$ B" is accepted (even one such proof), then the proposition "A $\Rightarrow$ B" is established as true. In this way, one can construct a thin "propositional logic category" from a thick "category of proofs".
