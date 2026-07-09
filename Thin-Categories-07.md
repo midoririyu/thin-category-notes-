@@ -1,4 +1,4 @@
-**[Back to Table of Contents](../README.md)**
+**[Back to Table of Contents](README.md)**
 
 # Thin Categories (7)  
 Thinning of Functors
