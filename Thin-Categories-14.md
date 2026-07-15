@@ -171,7 +171,7 @@ $\sup_{y'} \inf_x F(x,y',x,y') \to \inf_{x'} \sup_y F(x',y,x',y).$
 
 Suppose that the end and the coend coincide, i.e.,
 
-$\int_x F(x,y,x,y) \ \cong\ \int^x F(x,y,x,y)$ holds.
+$\int_x F(x,y,x,y) \ \cong\ \int^x F(x,y,x,y)$ holds for any y fixed.
 
 Then $\int^y \int_x F(x,y,x,y) \ \cong\ \int_x \int^y F(x,y,x,y).$
 
