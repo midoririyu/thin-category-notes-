@@ -49,7 +49,7 @@ Since $P(\mathcal{C})$ is a strongly connected category, by Lemma 3-1 in "Thin C
 In particular, when $\mathcal{D}$ is a thin category, by the universal property of the packed arrows functor (Proposition 4-5 in "Thin Categories (4)"), for any thinning functor $F: \mathcal{C} \to \mathcal{D}$ there exists a unique functor $\tilde{F} : P(\mathcal{C}) \to \mathcal{D}$ such that
 $F = \tilde{F} \circ P_\mathcal{C}.$
 Looking at the domains and codomains of these functors, we also have
-$P(F) = \tilde{F} \circ P_\mathcal{D}.$
+$P(F) = P_\mathcal{D} \circ \tilde{F} .$
 
 ```mermaid
 flowchart LR
